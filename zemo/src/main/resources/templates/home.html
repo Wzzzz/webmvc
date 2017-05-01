@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>  
+    <meta charset="UTF-8">  
+    <title>Login</title>  
+    <link rel="stylesheet" type="text/css" href="../css/Home.css"/>  
+</head>  
+
+<body>
+<div>
+<p align="center"><b>这是我的首页</b></p>
+<p align="center"><b>我的账号：$!{user.name} </b></p>
+<p align="center"><b>我的密码：$!{user.password} </b></p>
+<p align="center"><b>我的信息：$!{user.information} </b></p>
+<div id="login">  
+<center>
+<form action="/regin/" id="regloginform" method="post"> 
+    <input type="text" placeholder="更新信息" name="message"></input>  
+    <div class="button-wrapper command clearfix">  
+    <button class="sign-button submit" type="submit" onclick="form=document.getElementById('regloginform');form.action='/update/'">更新</button>
+    <button class="sign-button submit" type="submit" onclick="form=document.getElementById('regloginform');form.action='/out/'">退出</button>      
+    </div>
+</form>  
+</center>
+</div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Login</title>  
+    <link rel="stylesheet" type="text/css" href="../css/Login.css"/>  
+</head>  
+<body>  
+    <div id="login">  
+        <h1>Login</h1>  
+        <form action="/reg/" id="regloginform" method="post"> 
+            <input type="text"  placeholder="用户名" name="name"></input>  
+            <input type="password"  placeholder="密码" name="password"></input>
+            <div class="button-wrapper command clearfix">  
+            <button class="sign-button submit" type="submit" onclick="form=document.getElementById('regloginform');form.action='/login/'">登录</button>
+            <button class="sign-button submit" type="submit" onclick="form=document.getElementById('regloginform');form.action='/reg/'">注册</button>
+            #if($msg)
+                $!{msg}
+            #end
+            </div>
+        </form>  
+    </div>
+</body>  
+</html>  
