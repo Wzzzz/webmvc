@@ -42,7 +42,7 @@ public class LoginController {
 			cookie.setPath("/");
 			response.addCookie(cookie);
 			userHolder.setUser((User)map.get("user"));
-			return "home";
+			return "redirect:/";
 		 }
       // else if(map.containsKey("msg"))
 		 else{
@@ -86,7 +86,7 @@ public class LoginController {
 			cookie.setPath("/");
 			response.addCookie(cookie);
 			userHolder.setUser((User)map.get("user"));
-			return "home";
+			return "redirect:/";
 		 }
 //	   else if(map.containsKey("msg"))
 	   else{

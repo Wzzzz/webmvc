@@ -4,26 +4,66 @@
     <meta charset="UTF-8">  
     <title>Login</title>  
     <link rel="stylesheet" type="text/css" href="../css/Home.css"/>  
+    
+    <title> -- HoverTree</title>  
+    <style>  
+    .keleyitable {  
+     width: 800px;  
+     }  
+    .keleyitable table, td, th {  
+     border: 1px solid green;margin-top:10px;  
+     }  
+     .klytd {width:80px;text-align:center  
+     }  
+     .hvttd {  
+     width:400px}  
+     </style>  
 </head>  
 
 <body>
 <div>
-<p align="center"><b>这是我的首页</b></p>
-<p align="center"><b>我的账号：$!{user.name} </b></p>
-<p align="center"><b>我的密码：$!{user.password} </b></p>
+<p align="center"><b>评论首页</b></p>
+<p align="left"><b>我的账号：$!{user.name} </b></p>
+<p align="left"><b>我的密码：$!{user.password} </b></p>
 <p align="center"><b>我的信息：$!{user.information} </b></p>
-<div id="login">  
-<center>
-<form action="/regin/" id="regloginform" method="post"> 
-    <input type="text" placeholder="更新信息" name="message"></input>  
-    <div class="button-wrapper command clearfix">  
-    <button class="sign-button submit" type="submit" onclick="form=document.getElementById('regloginform');form.action='/update/'">更新</button>
-    <button class="sign-button submit" type="submit" onclick="form=document.getElementById('regloginform');form.action='/out/'">退出</button>      
-    </div>
-</form>  
-</center>
+  <div id="login">   
+    <form action="/regin/" id="regloginform" method="post"> 
+      <input type="text" placeholder="更新信息" name="message"></input>  
+      <div class="button-wrapper command clearfix">  
+        <button class="sign-button submit" type="submit" onclick="form=document.getElementById('regloginform');form.action='/update/'">更新</button>
+        <button class="sign-button submit" type="submit" onclick="form=document.getElementById('regloginform');form.action='/out/'">退出</button>      
+      </div>
+    </form>
+    <form action="/commen/" id="regloginform" method="post"> 
+     <input type="text" placeholder="评论" name="comme"></input>  
+       <div class="button-wrapper command clearfix">  
+       <button class="sign-button submit" type="submit" onclick="form=document.getElementById('regloginform');form.action='/commen/'">评论</button> 
+       </div>
+      <div style="margin:0px auto;" class="keleyitable"><h2></h2>   
+     </form>   
+   </div>
 </div>
-</div>
+
+  <table>  
+   <tr><td class="klytd">留言时间：</td><td class="hvttd">$date.format('yyyy-MM-dd HH:mm:ss',${comment0.creatDate})</td></tr>  
+   <tr><td class="klytd">留言用户：</td><td class ="hvttd">${comment0.userName}</td></tr>   
+   <tr><td class="klytd">内容：</td><td class ="hvttd">${comment0.content}</td></tr>  
+  </table>  
+  <table>  
+   <tr><td class="klytd">留言时间：</td><td class="hvttd">$date.format('yyyy-MM-dd HH:mm:ss',${comment1.creatDate})</td></tr>  
+   <tr><td class="klytd">留言用户：</td><td class="hvttd">${comment1.userName}</td></tr>  
+   <tr><td class="klytd">内容：</td><td class="hvttd">${comment1.content}</td></tr>  
+  </table>  
+  <table>  
+   <tr><td class="klytd">留言时间：</td><td class="hvttd">$date.format('yyyy-MM-dd HH:mm:ss',${comment2.creatDate})</td></tr>  
+   <tr><td class="klytd">留言用户：</td><td class="hvttd">${comment2.userName}</td></tr>  
+   <tr><td class="klytd">内容：</td><td class="hvttd">${comment2.content}</td></tr>  
+  </table>  
+  <table>  
+   <tr><td class="klytd">留言时间：</td><td class="hvttd">$date.format('yyyy-MM-dd HH:mm:ss',${comment3.creatDate})</td></tr>  
+   <tr><td class="klytd">留言用户：</td><td class="hvttd">${comment3.userName}</td></tr>  
+   <tr><td class="klytd">内容：</td><td class="hvttd">${comment3.content}</td></tr>  
+   </table>   
 </body>
 
 </html>
